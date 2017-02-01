@@ -9,9 +9,9 @@ function getOSinfo(){
   var userInfo = os.userInfo();
 
   if (type === 'Darwin'){
-    type = "OSX";
+    type = 'OSX';
   } else if (type === 'Windows_NT'){
-    type = "Windows";
+    type = 'Windows';
   }
   console.log('System: ', type);
   console.log('Release: ', release);
