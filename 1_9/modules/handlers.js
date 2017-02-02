@@ -8,7 +8,6 @@ function filenameGenerator(){
   return path;
 }
 
-
 exports.upload = function(request,response){
   console.log('Serving Upload page');
   var form = new formidable.IncomingForm();
