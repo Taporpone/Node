@@ -19,9 +19,12 @@ var Counter = React.createClass({
     console.log('Inicjalizacja po render(), umozliwia manipulowanie DOM');
   },
 
-  shouldComponentUpdate: function(){
+  shouldComponentUpdate: function(nextState){
     console.log('Moze byc wykonana po pierwszej inicjalizacji, sprawdza czy rendering jest potrzebny, jezeli true, odpala componentWillUpdate')
-  }
+    if (this.state.counter !== nextState.counter){
+      return true;
+    }
+  },
 
   componentWillUpdate: function(nextProps,nextState){
     console.log('Przygotowanie do update, state nie powinien byc w niej zmieniany poniewaz sama w sobie nie powoduje update');
@@ -36,9 +39,9 @@ var Counter = React.createClass({
   },
 
   increment: function(){
-      this.setState({
-        counter: this.state.counter + 1
-      });
+    this.setState({
+      counter: this.state.counter + 1
+    });
   },
 
   decrement: function(){
