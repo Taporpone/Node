@@ -1,4 +1,4 @@
-var Contacts = React.createClass({
+Contacts = React.createClass({
   propTypes:{
     items: React.PropTypes.array.isRequired
   },

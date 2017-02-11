@@ -1,2 +1,2 @@
-var app = <App />;
+app = <App />;
 ReactDOM.render(app,document.getElementById('app'));
