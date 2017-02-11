@@ -10,17 +10,16 @@ http.createServer(function(request,response){
     });
   }else{
     fs.readFile('404.jpg',function(err,data){
-      try {
-          response.writeHeader(404,{"Content-Type":"image/jpeg; charset=utf-8"});
-          response.write(data);
-          response.end();
-      } catch (err){
+      if (err){
         response.writeHeader(404,{"Content-Type":"text/html; charset=utf-8"});
         response.write('<h1>404</h1>');
         response.end();
-        console.log('Image 404.jpg not found, serving static text!')
+        console.log('Image 404.jpg not found, serving static text!');
+      }else{
+        response.writeHeader(404,{"Content-Type":"image/jpeg; charset=utf-8"});
+        response.write(data);
+        response.end();
       }
-
     });
   }
 }).listen(9000);
