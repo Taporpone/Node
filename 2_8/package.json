@@ -1,0 +1,26 @@
+{
+  "name": "gif_search",
+  "version": "1.0.0",
+  "description": "Gif search engine",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Taporpone/Node/tree/master/2_8"
+  },
+  "keywords": [
+    "gif",
+    "node",
+    "react",
+    "jsx",
+    "js"
+  ],
+  "author": "Taporpone",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
