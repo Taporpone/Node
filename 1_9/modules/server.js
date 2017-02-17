@@ -11,7 +11,7 @@ function start(){
     console.log(request.connection.remoteAddress, ' requested ', request.url);
     response.writeHead(200,{"Content-Type":"text/plain"});
     if (request.url === '/' || request.url === '/start'){
-        handlers.welcome(request,response);
+      handlers.welcome(request,response);
     }
     else if (request.url === '/upload'){
       handlers.upload(request,response);
@@ -21,8 +21,9 @@ function start(){
       existingFiles = fs.readdirSync('./files'); // reload
     }
     else if (request.url.includes('/files/')){
-      if (existingFiles.indexOf(request.url.split('/')[2]) >=0){
-        var imageUrl = './files/' + request.url.split('/')[2]
+      var requestedFileName = request.url.split('/')[2]; // grab only filename from requested URL
+      if (existingFiles.indexOf(requestedFileName) >=0){ // check if it exists localy
+        var imageUrl = './files/' + requestedFileName;
         handlers.image(request,response,imageUrl);
       }else{
         handlers.error(request,response);

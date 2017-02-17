@@ -13,6 +13,7 @@
   "dependencies": {
     "bluebird": "^3.4.7",
     "colors": "^1.1.2",
+    "crypto": "0.0.3",
     "formidable": "^1.1.1"
   }
 }
