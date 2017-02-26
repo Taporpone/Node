@@ -19,7 +19,7 @@ App = React.createClass({
         gif:gif,
         searchTerm: searchTerm
       });
-    }).bind(this);
+    }.bind(this));
   },
   getGif: function(searchTerm,callback){
     var url= GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + searchTerm;
